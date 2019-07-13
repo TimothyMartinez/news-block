@@ -13,6 +13,9 @@
   #navsrch{
     width: 7rem;
   }
+  .windows{
+    margin-top: 1rem !important;
+  }
   }
 
 
@@ -37,7 +40,7 @@ body{
   bottom: 0;
   object-fit: cover;
   background-color: lightgray;
-  border: solid 2px black;
+  /* border: solid 2px black; */
 }
 
 #demo h1{
@@ -93,11 +96,11 @@ main{
   width: 100%;
   position: absolute;
   top: 100px;
-  bottom: 100px;
+  bottom: 0;
   left: 0;
 }
 
-#windows{
+.windows{
   width: 100%;
   display: grid;
   place-items: center;
@@ -107,16 +110,16 @@ main{
   margin-top: 6rem;
 }
 
-#windows div{
+.windows div{
   display: grid;
   place-items: center;
   background-color: ivory;
   border:black 1px solid;
-  width: 20rem;
+  width: 100%;
   height: 20rem;
 }
 
-#windows div h1{
+.windows div h1{
   display: grid;
   place-items: center;
 }
