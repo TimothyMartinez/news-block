@@ -10,6 +10,8 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="/home/timartin/Desktop/wyncode/My Projects/newsbloc/mixolidia_timothy_tushar/client/src/App.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -23,16 +25,37 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div id="root">
+      <header>
+        <nav id="navbox">
+          <span id="change">
+            news
+          </span>
+          <span>
+            <form>
+              <label for="navsrch">Find News</label>
+              <input id="navsrch" type="search"/>
+            </form>
+          </span>
+        </nav>
+      </header>
+      <main>
+        <div id="windows">
+          <div>
+            <h1>TEST</h1>
+          </div>
+          <div>
+            <h1>TEST</h1>
+          </div>
+          <div>
+            <h1>TEST</h1>
+          </div>
+          <div>
+            <h1>TEST</h1>
+          </div>
+        </div>
+      </main>
+    </div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

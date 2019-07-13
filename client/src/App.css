@@ -1,10 +1,43 @@
 /* JUST FOR DEMO PURPORSES, REPLACE WITH YOUR OWN CODE */
 
-#demo{
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+
+/* @Media */
+
+@media  (max-width: 880px) {
+  #navbox span {
+    font-size: 1rem !important;
+  } 
+  #navbox span:nth-child(2) {
+    margin-left: 20% !important;
+  }
+  #navsrch{
+    width: 7rem;
+  }
+  }
+
+
+/* START */
+*{
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  /* border: solid black 1px; */
+}
+
+body{
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+#root{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  object-fit: cover;
+  background-color: lightgray;
+  border: solid 2px black;
 }
 
 #demo h1{
@@ -12,4 +45,79 @@
   place-items: center;
 }
 
+
+/* Navbar styling below this line */
+
+header{
+  width: 100%;
+}
+
+#navbox{
+  background-color: grey;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 4rem;
+}
+
+#navbox span{
+  font-size: 2rem;
+}
+
+#navbox span form{
+  display: flex;
+  align-items: center;
+}
+
+#navbox span form label{
+  margin-right: 1rem;
+}
+
+#navbox span form input{
+  height: 1.5rem;
+}
+
+#navbox span:nth-child(2){
+  margin-left: 32%;
+  margin-right: 3%;
+}
+
+/* END NAVBAR */
+
+/* Main body styling below this line */
+
+main{
+  display: grid;
+  width: 100%;
+  position: absolute;
+  top: 100px;
+  bottom: 100px;
+  left: 0;
+}
+
+#windows{
+  width: 100%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 0;
+  padding-left: 0;  
+  margin-top: 6rem;
+}
+
+#windows div{
+  display: grid;
+  place-items: center;
+  background-color: ivory;
+  border:black 1px solid;
+  width: 20rem;
+  height: 20rem;
+}
+
+#windows div h1{
+  display: grid;
+  place-items: center;
+}
 /* END DEMO */
