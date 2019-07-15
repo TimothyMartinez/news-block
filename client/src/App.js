@@ -78,8 +78,8 @@ class App extends React.Component {
         <h2>Todays news for a better world</h2>
       </div>
       <main>
-        <div className="windows" onClick={categoryClick('general')}>
-          <div id="topnews">
+        <div className="windows" >
+          <div id="topnews" onClick={categoryClick('general')}>
             <h1>Top News</h1>
           </div>
           {CATEGORIES_LIST.map(category => <div key={category.category} className="winsizes"style={category.styles} onClick={categoryClick(category)}><h1>{category.category}</h1></div>)}
