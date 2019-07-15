@@ -1,10 +1,7 @@
 import React from 'react'
 import './App.css'
 import SearchBar from './components/SearchBar'
-import Clock from './components/Clock'
-import Menu from './components/Menu'
-
-
+import axios from 'axios'
 
 const CATEGORIES_LIST = [
   {
@@ -54,10 +51,10 @@ const CATEGORIES_LIST = [
 class App extends React.Component {
   state = { serverMessage: '' }
 
-  componentDidMount(){
-    fetch('/api/demo')
-      .then(response => response.json())
-      .then(data => this.setState({ serverMessage: data.message }))
+  getNews = (input) => {
+    axios.get(`/search/${input}`)
+    .then((response) => console.log(response))
+    
   }
 
   render(){
@@ -72,21 +69,20 @@ class App extends React.Component {
             News Block
           </span>
           <span>
-            <SearchBar/>
+            <SearchBar getNews={ this.getNews } />
           </span>
         </nav>
       </header>
-      <div class="timeblock">
-        <Clock/> 
-        <span>|</span>
+      <div className="timeblock">
+        <h1>Time</h1> | 
         <h2>Todays news for a better world</h2>
       </div>
       <main>
-        <div class="windows">
+        <div className="windows">
           <div id="topnews">
             <h1>Top News</h1>
           </div>
-          {CATEGORIES_LIST.map(category => <div class="winsizes"style={category.styles} ><h1>{category.category}</h1></div>)}
+          {CATEGORIES_LIST.map(category => <div key={category.category} className="winsizes"style={category.styles} ><h1>{category.category}</h1></div>)}
         </div>
       </main>
     </div>

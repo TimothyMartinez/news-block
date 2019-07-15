@@ -1,16 +1,31 @@
+
 import React from 'react';
 import '../App.css';
 
+class SearchBar extends React.Component {
+  state = {
+    input: ""
+  }
 
-class SearchBar extends React.Component{
-    render(){
-        return(
-    <form id="resize" action=""> 
-        <input id="navsrch" type="search"/>
-        <i className="fa fa-search"></i>
+  handleChange = (event) => {
+    console.log(event.target.value)
+    this.setState({ input: event.target.value })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.props.getNews(this.state.input)
+  }
+
+  render(){
+    console.log(this.props)
+    return(
+      <form id="resize" onSubmit={this.handleSubmit}> 
+      <input id="navsrch" type="search" onChange={this.handleChange} />
+      <i className="fa fa-search"></i>
     </form>
-        )
-    }
+    )
+  }
 }
 
-export default SearchBar;
+export default SearchBar
