@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 import SearchBar from './components/SearchBar'
 import axios from 'axios'
+import categoryClick from './components/api_call'
 
 const CATEGORIES_LIST = [
   {
@@ -77,11 +78,11 @@ class App extends React.Component {
         <h2>Todays news for a better world</h2>
       </div>
       <main>
-        <div className="windows">
+        <div className="windows" onClick={categoryClick('general')}>
           <div id="topnews">
             <h1>Top News</h1>
           </div>
-          {CATEGORIES_LIST.map(category => <div key={category.category} className="winsizes"style={category.styles} ><h1>{category.category}</h1></div>)}
+          {CATEGORIES_LIST.map(category => <div key={category.category} className="winsizes"style={category.styles} onClick={categoryClick(category)}><h1>{category.category}</h1></div>)}
         </div>
       </main>
 
