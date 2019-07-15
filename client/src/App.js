@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 import SearchBar from './components/SearchBar'
 import axios from 'axios'
+import ArticlesModal from './components/Modal'
 
 const CATEGORIES_LIST = [
   {
@@ -48,12 +49,16 @@ const CATEGORIES_LIST = [
 ]
 
 class App extends React.Component {
-  state = { serverMessage: '' }
+  state = { serverMessage: '', articles: [], modalOpen: false }
 
   getNews = (input) => {
     axios.get(`/search/${input}`)
-    .then((response) => console.log(response))
+      .then(response => this.setState({ modalOpen: true, articles: response.data }))
     
+  }
+
+  closeModal = () => {
+    this.setState({ modalOpen: false })
   }
 
   render(){
@@ -84,7 +89,11 @@ class App extends React.Component {
           {CATEGORIES_LIST.map(category => <div key={category.category} className="winsizes"style={category.styles} ><h1>{category.category}</h1></div>)}
         </div>
       </main>
-
+      <ArticlesModal
+        open={this.state.modalOpen}
+        articles={this.state.articles}
+        closeModal={this.closeModal}
+      />
     </div>
     )
   }
