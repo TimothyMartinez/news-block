@@ -1,12 +1,12 @@
-const express = require('express')
-const app = express()
+import React from 'react'
+import axios from 'axios'
+
 
 class categoryClick extends React.Component {
     state = {articles : {}}
     
     componentDidMount() {
-        app.get(`https://newsapi.org/v2/top-headlines?category=${this.params.category}country=us&apiKey=${process.env.NA_API_KEY}&language=en&pageSize=100`)
-        .then(response => response.json(response.data))  
+        axios.get(`https://newsapi.org/v2/top-headlines?category=${this.params.category}country=us&apiKey=${process.env.NA_API_KEY}&language=en&pageSize=100`)  
         .then(response => this.setState({ articles: response.data.articles }))
     }
 
