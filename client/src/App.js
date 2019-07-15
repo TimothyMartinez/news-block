@@ -1,5 +1,10 @@
 import React from 'react'
 import './App.css'
+import SearchBar from './components/SearchBar'
+import Clock from './components/Clock'
+import Menu from './components/Menu'
+
+
 
 const CATEGORIES_LIST = [
   {
@@ -45,6 +50,7 @@ const CATEGORIES_LIST = [
   },
 ]
 
+
 class App extends React.Component {
   state = { serverMessage: '' }
 
@@ -60,21 +66,19 @@ class App extends React.Component {
       <header>
         <nav id="navbox">
           <span>
-            selection
+            <Menu />
           </span>
           <span id="logo">
             News Block
           </span>
           <span>
-            <form id="resize" action=""> 
-              <input id="navsrch" type="search"/>
-              <i class="fa fa-search"></i>
-            </form>
+            <SearchBar/>
           </span>
         </nav>
       </header>
       <div class="timeblock">
-        <h1>Time</h1> | 
+        <Clock/> 
+        <span>|</span>
         <h2>Todays news for a better world</h2>
       </div>
       <main>
@@ -85,7 +89,6 @@ class App extends React.Component {
           {CATEGORIES_LIST.map(category => <div class="winsizes"style={category.styles} ><h1>{category.category}</h1></div>)}
         </div>
       </main>
-
     </div>
     )
   }
