@@ -184,7 +184,6 @@ form:hover{
 form:hover input{
   display: block;
   font-family: 'Roboto', sans-serif;
-  z-index: 0;
 }
 
 
